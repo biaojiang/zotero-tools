@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zotman"
+version = "0.1.0"
+description = "Zotero attachment management tools for linked Dropbox workflows"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Biao Jiang", email = "github@minsignal.com" }
+]
+dependencies = [
+    "watchdog"
+]
+
+[project.urls]
+Homepage = "https://github.com/biaojiang/zotero-tools"
+
+[project.scripts]
+zotman = "zotman.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
