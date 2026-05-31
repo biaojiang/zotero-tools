@@ -40,6 +40,7 @@ This will:
 	```
 
 The `--cloud` option allows you to set any base folder (e.g., Dropbox, Google Drive, OneDrive). The default is `~/Dropbox/Zotero`.
+Use `--db` if your Zotero database is not at `~/Zotero/zotero.sqlite`.
 
 Then, manually re-link the file in Zotero:
 

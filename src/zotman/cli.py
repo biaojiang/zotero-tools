@@ -25,6 +25,12 @@ def main():
         default="~/Dropbox/Zotero",
         help="Base cloud folder (e.g., Dropbox, Google Drive, etc.)",
     )
+    move_parser.add_argument(
+        "--db",
+        type=str,
+        default="~/Zotero/zotero.sqlite",
+        help="Path to Zotero SQLite database",
+    )
 
     clean_parser = subparsers.add_parser(
         "clean", help="Clean orphaned folders in Zotero storage"
@@ -45,6 +51,6 @@ def main():
     args = parser.parse_args()
 
     if args.command == "move":
-        watcher.run_watcher(args.storage, args.cloud)
+        watcher.run_watcher(args.storage, args.cloud, args.db)
     elif args.command == "clean":
         cleaner.run_cleaner(args.storage, args.db)
